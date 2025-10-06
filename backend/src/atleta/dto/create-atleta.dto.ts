@@ -3,5 +3,5 @@ export class CreateAtletaDto {
   nombre: string;
   tiempo: string;
   posicion: number;
-  ciudad: string; // ID de la ciudad
+  ciudad: string; 
 }

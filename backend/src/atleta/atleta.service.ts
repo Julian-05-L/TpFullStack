@@ -31,15 +31,12 @@ export class AtletaService {
       const createdAtleta = new this.atletaModel(atletaData);
       return await createdAtleta.save();
     } catch (error) {
-      // Log the error for debugging purposes
       console.error('Error al guardar el atleta:', error);
-      // Throw a more generic error to the client
       throw new InternalServerErrorException('Ocurrió un error al crear el atleta.');
     }
   }
 
   findAll() {
-    // Usamos .populate('ciudad') para que tambien traiga la informacion de la ciudad relacionada
     return this.atletaModel.find().populate('ciudad').exec();
   }
 

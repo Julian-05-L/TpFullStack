@@ -11,13 +11,11 @@ export type CiudadDocument = Ciudad & Document;
 export class Ciudad {
   @Prop({ required: true, unique: true })
   nombre: string;
-  // Virtual property to hold the athletes
   atletas: Atleta[];
 }
 
 export const CiudadSchema = SchemaFactory.createForClass(Ciudad);
 
-// Define the virtual relationship
 CiudadSchema.virtual('atletas', {
   ref: 'Atleta',
   localField: '_id',
